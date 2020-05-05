@@ -1,6 +1,4 @@
-use day1::{Bot, Movement};
-use std::fs::File;
-use std::io::{prelude::*, BufReader};
+use aoc::{Movement, Turtle};
 
 fn main() {
     let filename = std::env::args()
@@ -11,7 +9,7 @@ fn main() {
     let file = std::fs::read(filename).expect("Can’t open file");
     let input: String = file.iter().cloned().map(|el| el as char).collect();
 
-    let mut bot = Bot::new();
+    let mut bot = Turtle::new();
 
     input
         .split(",")
